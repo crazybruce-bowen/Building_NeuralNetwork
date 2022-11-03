@@ -62,4 +62,3 @@ if __name__=='__main__':
     
     split_data(source_cat, tr_cat_path, val_cat_path)
     split_data(source_dog, tr_dog_path, val_dog_path)
-    
