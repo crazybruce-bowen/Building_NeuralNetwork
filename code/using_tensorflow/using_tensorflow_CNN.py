@@ -20,7 +20,7 @@ val_path = os.path.join(root_path, 'data', 'validation')
 
 def make_data_generator(train_path, val_path):
     """
-    使用tensorflow的ImageDataGenerator，快捷进行数据读取和初始化
+    使用tensorflow的ImageDataGenerator, 快捷进行数据读取和初始化
     """
     tr_data_gen = ImageDataGenerator(
         rescale=1/255,  # 标准化
@@ -55,14 +55,17 @@ tr_data, val_data = make_data_generator(train_path, val_path)
 def create_model():
     model = keras.models.Sequential([
         # Conv层
-        keras.layers.Conv2D(256, (3, 3), activation='relu', input_shape=(150, 150, 3)),
+        # keras.layers.Conv2D(256, (3, 3), activation='relu', input_shape=(150, 150, 3)),
+        keras.layers.Conv2D(16, (3, 3), activation='relu', input_shape=(150, 150, 3)),
         keras.layers.MaxPooling2D(2, 2),
-        keras.layers.Conv2D(128, (3, 3), activation='relu', ),
+        # keras.layers.Conv2D(128, (3, 3), activation='relu', ),
+        keras.layers.Conv2D(16, (3, 3), activation='relu', input_shape=(150, 150, 3)),
         keras.layers.MaxPooling2D(2, 2),
         # Flatten
         keras.layers.Flatten(),
         # Dense
-        keras.layers.Dense(128, activation='relu'),
+        # keras.layers.Dense(128, activation='relu'),
+        keras.layers.Dense(8, activation='relu'),
         keras.layers.Dense(1, activation='sigmoid'),
         ]
     )
@@ -87,7 +90,7 @@ class MyCallback(tf.keras.callbacks.Callback):
 
 mycallback = MyCallback()
 #%% Train and validate
-def model_train(model, epoch=15):
+def model_train(model, epoch=5):
     model.fit(
         tr_data,
         epochs=epoch,
@@ -127,5 +130,3 @@ pre_trained_model = create_pre_trained_model(local_weights_file)
 
 pre_trained_model.summary()
 
-
-     
