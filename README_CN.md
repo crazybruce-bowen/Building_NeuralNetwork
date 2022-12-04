@@ -1,13 +1,17 @@
-TODO：
+分别使用numpy, tensorflow2.0, pytorch框架完成基础的深度学习模型搭建，应对图像、文本等基础任务
+
+项目建设中
+
+TODO list
 一、基础
 分别使用
     1. Python原生numpy
     2. tensorflow
     3. pytorch
 构建基础神经网络。包括：
-    1. DNN + 判别
-    2. CNN + 图像判别
-    3. LSTM + 基础语义识别
+    1. DNN + 判别 | 完成
+    2. CNN + 图像判别 | 完成
+    3. LSTM + 基础语义识别 | 完成
 二、拓展
     1. YOLO
     2. Bert
