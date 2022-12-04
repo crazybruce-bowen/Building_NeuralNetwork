@@ -18,6 +18,7 @@ val_path = os.path.join(root_path, 'data', 'validation')
 #%% Data
 # DataLoader with tensorflow
 
+
 def make_data_generator(train_path, val_path):
     """
     使用tensorflow的ImageDataGenerator, 快捷进行数据读取和初始化
@@ -49,7 +50,9 @@ def make_data_generator(train_path, val_path):
     )
     return tr_data, val_data
 
+
 tr_data, val_data = make_data_generator(train_path, val_path)
+
 
 #%% Model
 def create_model():
@@ -73,10 +76,13 @@ def create_model():
     model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
     return model
 
+
 model = create_model()
 #%% Model Describe
 model.summary()
 #%% Make callback
+
+
 class MyCallback(tf.keras.callbacks.Callback):
     """
     继承tf.keras.callbacks.Callback来实现停止训练功能
