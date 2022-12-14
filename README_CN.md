@@ -1,4 +1,5 @@
-科普项目
+# 深度学习科普项目
+简体中文 | [English](README.md)
 
 分别使用numpy, tensorflow2.0, pytorch框架完成基础的深度学习模型搭建，应对图像、文本等基础任务
 
